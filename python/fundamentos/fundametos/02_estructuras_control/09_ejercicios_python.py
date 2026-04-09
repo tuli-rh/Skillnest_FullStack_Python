@@ -4,30 +4,69 @@
 Desarrolla un programa que solicite al usuario cuántos números pares desea ver ($n$). 
 El programa debe imprimir los primeros $n$ números pares positivos.
 """
+"""
 num = int(input("¿Cuantos números pares desea ver?: "))
 for i in range(1, num + 1):
     print(i * 2)
+"""
+def numerosDinamicos():
+    n = int(input("¿Cuantos números desea ver?: "))
+    pares = []
+    for i in range (1, (n * 2) + 1):
+        if i % 2 == 0:
+            pares.append(i)
+    print(f"Mostrando pares: {pares}")
+numerosDinamicos()
 
 """ 2. Verificador de Edad y Acceso
 Pide al usuario su año de nacimiento. Calcula su edad y muestra si es mayor de edad (18+). 
 Si tiene menos de 18, indica cuántos años le faltan para la mayoría de edad.
 """
-anio = int(input("Ingrese su año de nacimiento: "))
-edad = 2026 - anio
+def verificarEdad():
+    anio = int(input("Ingrese su año de nacimiento: "))
+    edad = 2026 - anio
 
-if edad >= 18:
-    print("Eres mayor de edad.")
-else:
-    faltan = 18 - edad
-    print(f"Eres menor de edad. \nTe faltan {faltan} años para ser mayor de edad.")
+    if edad >= 18:
+      print("Eres mayor de edad.")
+    else:
+        faltan = 18 - edad
+        print(f"Eres menor de edad. \nTe faltan {faltan} años para ser mayor de edad.")
+verificarEdad()
 
 """ 3. Calculadora de Descuentos
 Solicita el precio de un producto y la cantidad comprada. Si el total supera los $100, aplica un 15% de descuento. 
-Muestra el subtotal, el descuento aplicado y el total final."""
+Muestra el subtotal, el descuento aplicado y el total final.
+"""
+def descuento():
+    precioProduc = int(input("Ingrese el precio del producto: "))
+    cantidadProduc  = int(input("Ingrese la cantidad de productos que desea comprar: "))
+    total = precioProduc * cantidadProduc
+
+    if total > 100:
+        descuento = total * 15 / 100
+        print(f"A tu producto se le aplicara un descuento del 15%. Precio inicial ${total}, precio final ${descuento}")
+    else:
+        print(F"El total es de ${total}")
+descuento()
 
 """4. Clasificador de Números
 Pide un número al usuario e indica si es: Positivo-Par, Positivo-Impar, 
 Negativo-Par, Negativo-Impar o Cero."""
+def clasificadorNum():
+    n = int(input("Ingrese un número: "))
+    if n > 0 and n % 2 == 0:
+        print(f"El n° ingresado {n} es Positivo-Par")
+    elif n > 0 and n % 2 != 0:
+        print(f"El n° ingresado {n} es Positivo-Impar")
+    elif n < 0 and n % 2 == 0:
+        print(f"El n° ingresado {n} es Negativo-Par")
+    elif n < 0 and n % 2 != 0:
+        print(f"El n° ingresado {n} es Negativo-Impar")
+    elif n == "":
+        print("Error")
+clasificadorNum()
+
+
 
 # II. Iteraciones y Bucles (Intermedio)
 
@@ -35,6 +74,9 @@ Negativo-Par, Negativo-Impar o Cero."""
 Solicita un número entero y muestra su tabla de multiplicar del 1 al 12, 
 pero solo muestra los resultados que sean múltiplos de 3.
 """
+def tablaMultiplicar():
+    num = int(input("Ingrese un n° entero: "))
+    
 
 """ 6. Sumatoria con Centinela
 Crea un programa que pida números continuamente y los sume. 
