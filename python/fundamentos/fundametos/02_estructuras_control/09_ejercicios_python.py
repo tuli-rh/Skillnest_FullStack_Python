@@ -16,7 +16,7 @@ def numerosDinamicos():
         if i % 2 == 0:
             pares.append(i)
     print(f"Mostrando pares: {pares}")
-numerosDinamicos()
+
 
 """ 2. Verificador de Edad y Acceso
 Pide al usuario su año de nacimiento. Calcula su edad y muestra si es mayor de edad (18+). 
@@ -31,7 +31,7 @@ def verificarEdad():
     else:
         faltan = 18 - edad
         print(f"Eres menor de edad. \nTe faltan {faltan} años para ser mayor de edad.")
-verificarEdad()
+
 
 """ 3. Calculadora de Descuentos
 Solicita el precio de un producto y la cantidad comprada. Si el total supera los $100, aplica un 15% de descuento. 
@@ -47,7 +47,6 @@ def descuento():
         print(f"A tu producto se le aplicara un descuento del 15%. Precio inicial ${total}, precio final ${descuento}")
     else:
         print(F"El total es de ${total}")
-descuento()
 
 """4. Clasificador de Números
 Pide un número al usuario e indica si es: Positivo-Par, Positivo-Impar, 
@@ -64,7 +63,6 @@ def clasificadorNum():
         print(f"El n° ingresado {n} es Negativo-Impar")
     elif n == "":
         print("Error")
-clasificadorNum()
 
 
 
@@ -76,7 +74,11 @@ pero solo muestra los resultados que sean múltiplos de 3.
 """
 def tablaMultiplicar():
     num = int(input("Ingrese un n° entero: "))
-    
+
+    for i in range(1, 13):
+        resultado = num * i
+        if resultado % 3 == 0:
+            print(f"{num} x {i} = {resultado}")
 
 """ 6. Sumatoria con Centinela
 Crea un programa que pida números continuamente y los sume. 
@@ -84,10 +86,18 @@ El ciclo debe terminar cuando el usuario ingrese un número negativo.
 Al final, muestra la suma total (sin incluir el negativo).
 """
 
+
+
 """7. Contador de Vocales
 Pide al usuario una frase o palabra. Utiliza un bucle para recorrer 
 la cadena y contar cuántas vocales tiene en total.
 """
+def contadorVocales():
+    word = input("Ingrese una palabra/frase: ")
+    for i in word:
+        
+
+
 
 """8. Validación de Contraseña
 Define una contraseña en una variable. Pide al usuario que la intente adivinar. 
@@ -135,3 +145,45 @@ El promedio semanal.
 Cuántos días la temperatura fue superior a 25 grados.
 El día con la temperatura más baja (asumiendo que el índice 0 es Lunes).
 """
+continuar = True
+while continuar:
+    print("\n---Ejercicios Python---")
+    print("---Ejercicio 1---")
+    print("---Ejercicio 2---")
+    print("---Ejercicio 3---")
+    print("---Ejercicio 4---")
+    print("---Ejercicio 5---")
+    print("---Ejercicio 6---")
+    print("---Ejercicio 7---")
+    print("---Ejercicio 8---")
+    print("---Ejercicio 9---")
+    print("---Ejercicio 10---")
+    print("---Ejercicio 11---")
+    print("---Ejercicio 12---")
+    print("---Ejercicio 13---")
+    print("---Ejercicio 14---")
+    print("---Ejercicio 15---")
+    opcion = input("\n---Elije una opción: (1-15) (0 para salir)")
+    if opcion == "1":
+        print("\nEjecutar ejercicio 1: ")
+        print(numerosDinamicos())
+    elif opcion == "2":
+        print("\nEjecutar ejercicio 2: ")
+        print(verificarEdad())
+    elif opcion == "3":
+        print("\nEjecutar ejercicio 3: ")
+        print(descuento())
+    elif opcion == "4":
+        print("\nEjecutar ejercicio 4: ")
+        print(clasificadorNum())
+    elif opcion == "5":
+        print("\nEjecutar ejercicio 5: ")
+        print(tablaMultiplicar())
+    elif opcion == "6":
+        print("\nEjecutar ejercicio 6: ")
+        print(sumatoria())
+    elif opcion == "0":
+        print("Saliendo...")
+        continuar = False
+    else:
+        print("Opción no válido. Intenta otra vez.")
