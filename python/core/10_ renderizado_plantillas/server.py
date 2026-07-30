@@ -1,0 +1,42 @@
+@app.route("/listas")
+def renderizar_listas():
+
+    # Lista de números
+
+    numeros = [7, 15, 22]
+
+    # Lista de diccionarios
+
+    listado_estudiantes = [
+
+        {
+            "nombre":"Florencia",
+            "edad":25
+        },
+
+        {
+            "nombre":"Valentina",
+            "edad":30
+        },
+
+        {
+            "nombre":"José",
+            "edad":27
+        },
+
+        {
+            "nombre":"Patricio",
+            "edad":21
+        }
+
+    ]
+
+    return render_template(
+
+        "listas.html",
+
+        numeros=numeros,
+
+        estudiantes=listado_estudiantes
+
+    )
