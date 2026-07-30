@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f7f9fc;
+    color: #2d3748;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+.main-header h1 {
+    color: #2b6cb0;
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+}
+
+.btn-blue { background-color: #3182ce; }
+.btn-green { background-color: #38a169; }
+
+/* Grid de Tarjetas */
+.container {
+    max-width: 1050px;
+    margin: 20px auto 50px;
+    padding: 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.card-header {
+    background: linear-gradient(180deg, #e2e8f0 0%, #edf2f7 100%);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    height: 150px;
+}
+
+.badge-id {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #cbd5e0;
+    color: #2d3748;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.card-header img {
+    height: 110px;
+    object-fit: contain;
+}
+
+.card-body {
+    padding: 15px 20px 20px;
+    text-align: center;
+}
+
+.card-body h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* Chips de Tipos */
+.types-container {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.type-badge {
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 12px;
+    border-radius: 12px;
+    text-transform: capitalize;
+}
+
+/* Colores según el Tipo de Pokémon */
+.planta { background-color: #68d391; }
+.veneno { background-color: #b794f4; }
+.fuego { background-color: #ed8936; }
+.agua { background-color: #63b3ed; }
+.eléctrico { background-color: #ecc94b; color: #2d3748; }
+.normal { background-color: #cbd5e0; color: #2d3748; }
+.hada { background-color: #fbb6ce; color: #2d3748; }
+.fantasma { background-color: #805ad5; }
+.roca { background-color: #d69e2e; }
+.tierra { background-color: #dd6b20; }
+
+/* Barra de Poder */
+.power-section {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.power-label {
+    font-size: 0.75rem;
+    color: #718096;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.power-bar-bg {
+    background: #edf2f7;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.power-bar-fill {
+    background: #3182ce;
+    height: 100%;
+}
+
+/* Métricas Altura y Peso */
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    background: #f7fafc;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #a0aec0;
+}
+
+.stat-value {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Botón Ver Detalles */
+.btn-details {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border: 1px solid #3182ce;
+    color: #3182ce;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-details:hover {
+    background: #ebf8ff;
+}

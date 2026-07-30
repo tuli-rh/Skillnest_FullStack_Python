@@ -16,19 +16,40 @@ pokedex = [
    {"id": 143, "nombre": "Snorlax", "tipo": "Normal", "imagen": "snorlax.png", "poder": 160, "altura": "2.1m", "peso": "460.0kg"}
 ]
 
-
-# Ruta para mostrar todos los Pokémon
-
-# Ruta para mostrar un Pokémon por nombre
-
-# Ruta para mostrar un Pokémon por número en la Pokédex
-
-# Ruta para mostrar una cantidad específica de Pokémon
-
-# Error cuando no se encuentra un Pokémon
 def pokemon_no_encontrado(mensaje: str):
-   """Función simple para renderizar la página 404 con un mensaje."""
-   return render_template("404.html", mensaje=mensaje)
+   """Función para renderizar la página 404 con un mensaje personalizado."""
+   return render_template("404.html", mensaje=mensaje), 404
+
+# 1. Ruta para mostrar todos los Pokémon
+@app.route("/pokemon")
+def todos_los_pokemon():
+   return render_template("pokemon.html", pokemones=pokedex)
+
+# 2. Ruta para mostrar una cantidad específica de Pokémon
+@app.route("/pokemon/cantidad/<int:limite>")
+def pokemon_por_cantidad(limite):
+   lista_filtrada = pokedex[:limite]
+   return render_template("pokemon.html", pokemones=lista_filtrada)
+
+# 3. Ruta para mostrar un Pokémon por número en la Pokédex (ID)
+@app.route("/pokemon/<int:pokemon_id>")
+def pokemon_por_id(pokemon_id):
+   for p in pokedex:
+      if p["id"] == pokemon_id:
+            return render_template("pokemon.html", pokemones=[p])
+   
+   mensaje = f'No pudimos encontrar información sobre el Pokémon #{pokemon_id} en nuestra Pokédex.'
+   return pokemon_no_encontrado(mensaje)
+
+# 4. Ruta para mostrar un Pokémon por nombre
+@app.route("/pokemon/<string:nombre>")
+def pokemon_por_nombre(nombre):
+   for p in pokedex:
+      if p["nombre"].lower() == nombre.lower():
+            return render_template("pokemon.html", pokemones=[p])
+   
+   mensaje = f'No pudimos encontrar información sobre "{nombre}" en nuestra Pokédex.'
+   return pokemon_no_encontrado(mensaje)
 
 if __name__ == "__main__":
    app.run(debug=True)
