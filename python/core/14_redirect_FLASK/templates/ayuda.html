@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda - Conceptos Web</title>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a> | 
+        <a href="{{ url_for('ayuda') }}">Ayuda</a>
+    </nav>
+    <hr>
+
+    <h1>Conceptos Clave de Redirección</h1>
+
+    <h3>1. ¿Qué es una solicitud POST?</h3>
+    <p>Es un método HTTP diseñado para <strong>enviar datos</strong> al servidor dentro del cuerpo del mensaje (por ejemplo, al registrar un producto).</p>
+
+    <h3>2. ¿Qué es una solicitud GET?</h3>
+    <p>Es un método HTTP enfocado en <strong>solicitar o pedir un recurso</strong> al servidor (como renderizar una vista HTML). No altera el estado del servidor.</p>
+
+    <h3>3. ¿Para qué sirve <code>redirect()</code>?</h3>
+    <p>Le instruye al navegador del usuario que realice de manera inmediata una nueva petición independiente hacia una ruta URL distinta.</p>
+
+    <h3>4. ¿Por qué <code>request.form</code> está vacío tras la redirección?</h3>
+    <p>Porque <code>request.form</code> vive estrictamente dentro del ciclo de vida de la petición original (POST). Al invocar <code>redirect()</code>, se genera una segunda petición independiente (GET) que nace vacía.</p>
+
+    <hr>
+    <a href="{{ url_for('index') }}">Regresar al Inicio</a>
+
+</body>
+</html>

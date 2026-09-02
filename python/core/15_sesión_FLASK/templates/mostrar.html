@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Registrado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Usuario registrado</h1>
+        
+        <div class="card">
+            <p><strong>Nombre:</strong> {{ session["nombre_usuario"] }}</p>
+            <p><strong>E-mail:</strong> {{ session["email_usuario"] }}</p>
+        </div>
+
+        <hr>
+
+        <div class="links">
+            <a href="{{ url_for('perfil') }}">Ver Perfil</a> | 
+            <a href="{{ url_for('index') }}">Volver al formulario</a>
+        </div>
+    </div>
+</body>
+</html>
